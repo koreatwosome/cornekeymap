@@ -27,13 +27,12 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        label = "Lower";
+// |  TAB |  Q  |  W  |  E  |  R   |  T  |   | C_FF     | C_RW     | PSCRN |  Play/Pause   | PAGE_UP    | ESC    |
+// | SHIFT|  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | C_MUTE |
+// | CTRL |  Z  |  X  |  C  |  V   |  B  |   | C_BRI_DN | C_VOL_DN |  LFT  |     DWN       |    RGT     | RALT   |
+//                    |     | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp C_FF       &kp C_RW      &kp PSCRN &kp C_PP &kp PG_UP   &kp ESC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
