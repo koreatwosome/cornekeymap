@@ -33,9 +33,9 @@
 //                    |     | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp C_FF       &kp C_RW      &kp PSCRN &kp C_PP &kp PG_UP   &kp ESC
-   &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp C_BRI_UP &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp C_BRI_UP   &kp C_VOL_UP  &kp DEL   &kp UP   &kp PG_DOWN &kp C_MUTE
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp C_BRI_DN   &kp C_VOL_DN  &kp LEFT  &kp DOWN &kp RIGHT   &kp RALT
+                   &trans &kp LALT &kp SPACE  &kp RET  &kp BSPC   &trans
                         >;
                 };
                  raise_layer {
