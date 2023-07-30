@@ -22,7 +22,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O     &kp P    &kp ESC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L     &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp B &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH
-                   &mo 1 &kp LALT &kp SPACE  &kp RET &kp BSPC &mo 2
+                   &tog lower_layer &kp LALT &kp SPACE  &kp RET &kp BSPC &tog raise_layer
                         >;
                 };
                 lower_layer {
@@ -35,10 +35,11 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp C_FF       &kp C_RW      &kp PSCRN &kp C_PP &kp PG_UP   &kp ESC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp C_BRI_UP   &kp C_VOL_UP  &kp DEL   &kp UP   &kp PG_DN &kp C_MUTE
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp C_BRI_DN   &kp C_VOL_DN  &kp LEFT  &kp DOWN &kp RIGHT   &kp RALT
-                   &trans &kp LALT &kp SPACE  &kp RET  &kp BSPC   &kp LGUI 
+                   &tog default_layer &kp LALT &kp SPACE  &kp RET  &kp BSPC   &kp LGUI 
                         >;
                 };
-                 raise_layer {
+
+                raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | ESC  |
 // | SHIFT| F1  | F2  | F3  | F4   | F5  |   |  -  |  =   |  \  |  UP |  /  |  *   |
@@ -48,7 +49,7 @@
    &kp  TAB  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6    &kp N7    &kp N8   &kp N9   &kp N0    &kp ESC
    &kp LSHFT &kp F1 &kp F2 &kp F3 &kp F4 &kp F5    &kp MINUS &kp EQUAL &kp BSLH &kp UP   &kp FSLH   &kp STAR
    &kp LCTRL &kp F6 &kp F7 &kp F8 &kp F9 &kp F10   &kp LBKT  &kp RBKT  &kp LEFT &kp DOWN &kp RIGHT &kp GRAVE
-                      &kp LGUI &kp LALT  &kp SPACE &kp RET &kp BSPC    &trans
+                      &kp LGUI &kp LALT  &kp SPACE &kp RET &kp BSPC    &tog default_layer
                         >;
                 };
         };
