@@ -5,57 +5,81 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define default_layer 0
 #define lower_layer   1
 #define raise_layer   2
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    behaviors {
+        ht_mvglayer: ht_mvglayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MVGLAYER";
+            bindings = <&to>, <&to>;
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-// | SHIFT   |  A  |  S  |  D  |  F   |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
-// | CTRL    |  Z  |  X  |  C  |  V   |  B  |   |  B  |  N   |  M  |  ,  |  .  |  /  |
-//                       | LWR | LALT | SPC |   | ENT | BKSP | RSE |
-                        bindings = <
-   &mt ESC TAB &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O     &kp P    &kp ESC
-   &kp LSHFT   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L     &kp SEMI &kp SQT
-   &kp LCTRL   &kp Z &kp X &kp C &kp V &kp B   &kp B &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH
-                     &to 1 &kp LALT &kp SPACE  &kp RET &kp BSPC &to 2
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   | C_FF     | C_RW     | PSCRN |  Play/Pause   | PAGE_UP    | ESC    |
-// | SHIFT   |  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | C_MUTE |
-// | CTRL    |  Z  |  X  |  C  |  V   |  B  |   | C_BRI_DN | C_VOL_DN |  LFT  |     DWN       |    RGT     | RALT   |
-//                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
-                        bindings = <
-   &mt ESC TAB &kp Q &kp W &kp E &kp R &kp T    &kp C_FF       &kp C_RW      &kp PSCRN &kp C_PP &kp PG_UP   &kp ESC
-   &kp LSHFT   &kp A &kp S &kp D &kp F &kp G    &kp C_BRI_UP   &kp C_VOL_UP  &kp DEL   &kp UP   &kp PG_DN &kp C_MUTE
-   &kp LCTRL   &kp Z &kp X &kp C &kp V &kp B    &kp C_BRI_DN   &kp C_VOL_DN  &kp LEFT  &kp DOWN &kp RIGHT   &kp RALT
-                     &to 0 &kp LALT &kp SPACE  &kp RET  &kp BSPC   &kp LGUI 
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB/ESC |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | ESC  |
-// | SHIFT   | F1  | F2  | F3  | F4   | F5  |   |  -  |  =   |  \  |  UP |  /  |  *   |
-// | CTRL    | F6  | F7  | F8  | F9   | F10 |   |  [  |  ]   | LFT | DWN | RGT |  `   |
-//                       | GUI | LALT | SPC |   | ENT | BKSP | def |
-                        bindings = <
-   &mt ESC TAB &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6    &kp N7    &kp N8   &kp N9   &kp N0    &kp ESC
-   &kp LSHFT   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5    &kp MINUS &kp EQUAL &kp BSLH &kp UP   &kp FSLH   &kp STAR
-   &kp LCTRL   &kp F6 &kp F7 &kp F8 &kp F9 &kp F10   &kp LBKT  &kp RBKT  &kp LEFT &kp DOWN &kp RIGHT &kp GRAVE
-                      &kp LGUI &kp LALT  &kp SPACE   &kp RET &kp BSPC    &to 0
-                        >;
-                };
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC |
+            // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
+            // | CTRL    |  Z  |  X  |  C  |  V   |  B  |   |  B  |  N   |  M  |  ,  |  .  |  /  |
+            //                       | LWR | LALT | SPC |   | ENT | BKSP | RSE |
+
+            bindings = <
+&mt ESC TAB  &kp Q  &kp W  &kp E             &kp R          &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
+&kp LSHFT    &kp A  &kp S  &kp D             &kp F          &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
+&kp LCTRL    &kp Z  &kp X  &kp C             &kp V          &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
+                           &ht_mvglayer 1 2  &mt LALT LGUI  &kp SPACE    &kp RET  &kp BSPC  &to 2
+            >;
+        };
+
+        left_1 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp Y    &kp U     &kp I   &kp O      &kp P     &kp ESC
+&trans  &trans  &trans  &trans  &trans  &trans    &kp H    &kp J     &kp K   &kp L      &kp SEMI  &kp SQT
+&trans  &trans  &trans  &trans  &trans  &trans    &kp B    &kp N     &kp M   &kp COMMA  &kp DOT   &kp FSLH
+                        &trans  &trans  &trans    &kp RET  &kp BSPC  &trans
+            >;
+        };
+
+        raise_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB/ESC |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | ESC  |
+            // | SHIFT   | F1  | F2  | F3  | F4   | F5  |   |  -  |  =   |  \  |  UP |  /  |  *   |
+            // | CTRL    | F6  | F7  | F8  | F9   | F10 |   |  [  |  ]   | LFT | DWN | RGT |  `   |
+            //                       | GUI | LALT | SPC |   | ENT | BKSP | def |
+
+            bindings = <
+&mt ESC TAB  &kp N1  &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0     &kp ESC
+&kp LSHFT    &kp F1  &kp F2  &kp F3    &kp F4    &kp F5       &kp MINUS  &kp EQUAL  &kp BSLH  &kp UP    &kp FSLH   &kp STAR
+&kp LCTRL    &kp F6  &kp F7  &kp F8    &kp F9    &kp F10      &kp LBKT   &kp RBKT   &kp LEFT  &kp DOWN  &kp RIGHT  &kp GRAVE
+                             &kp LGUI  &kp LALT  &kp SPACE    &kp RET    &kp BSPC   &to 0
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   | C_FF     | C_RW     | PSCRN |  Play/Pause   | PAGE_UP    | ESC    |
+            // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | C_MUTE |
+            // | CTRL    |  Z  |  X  |  C  |  V   |  B  |   | C_BRI_DN | C_VOL_DN |  LFT  |     DWN       |    RGT     | RALT   |
+            //                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
+
+            bindings = <
+&mt ESC TAB  &kp Q  &kp W  &kp E  &kp R     &kp T        &kp C_FF      &kp C_RW      &kp PSCRN  &kp C_PP  &kp PG_UP  &kp ESC
+&kp LSHFT    &kp A  &kp S  &kp D  &kp F     &kp G        &kp C_BRI_UP  &kp C_VOL_UP  &kp DEL    &kp UP    &kp PG_DN  &kp C_MUTE
+&kp LCTRL    &kp Z  &kp X  &kp C  &kp V     &kp B        &kp C_BRI_DN  &kp C_VOL_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &kp RALT
+                           &to 0  &kp LALT  &kp SPACE    &kp RET       &kp BSPC      &kp LGUI
+            >;
+        };
+    };
 };
