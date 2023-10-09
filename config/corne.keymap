@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define default_layer 0
-#define left_1   1
+#define nav   1
 #define left_2   2
 #define raise_layer   3
 #define lower_layer   4
@@ -41,22 +41,22 @@
 &mt ESC TAB  &kp Q  &kp W  &kp E             &kp R          &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
 &kp LSHFT    &kp A  &kp S  &kp D             &kp F          &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
 &kp LCTRL    &kp Z  &kp X  &kp C             &kp V          &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
-                           &ht_mvglayer 1 2  &mt LALT LGUI  &kp SPACE    &kp RET  &kp BSPC  &to 2
+                           &ht_mvglayer 1 2  &ht_hp LALT LGUI  &kp SPACE    &kp RET  &kp BSPC  &to 2
             >;
         };
 
-        left_1 {
+        nav {
             // -----------------------------------------------------------------------------------------
-            // | TAB/ESC |  C_RW    |  Pause/Play  |  C_FF    | Mute     |  calc     |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-            // | SHIFT   |  Prev    |  M_Up        |  Next    | VOL_UP   |  BRI_UP   |   |  H  |  J   |  K  |  L  |  ;  |  '  |
-            // | CTRL    |  M_Left  |  M_Down      |  M_Right | VOL_DOWN |  BRI_DOWN |   |  B  |  N   |  M  |  ,  |  .  |  /  |
-            //                      | to0          | RCLK     | LCLK     |           |   | ENT | BKSP | RSE |
+            // | TAB/ESC |  C_RW    |  Pause/Play  |  C_FF    | VOP_DN   |  VOL_UP |   |  Y  |  U   |  I  |  O  |  P  | ESC |
+            // | SHIFT   |  Prev    |  M_Up        |  Next    | PG_UP    |  HOME   |   |  H  |  J   | DEL |  UP |  ;  |  '  |
+            // | CTRL    |  M_Left  |  M_Down      |  M_Right | PG_DOWN  |  END    |   |  B  |  N   | LFT | DWN | RGT |  /  |
+            //                                     | to0      | Menu     |  LCLK   |   | ENT | BKSP | to0 |
 
             bindings = <
-&mt ESC TAB  &kp C_RW        &kp C_PP        &kp C_FF         &kp C_MUTE     &kp K_CALC        &kp Y    &kp U     &kp I   &kp O      &kp P     &kp ESC
-&kp LSHFT    &kp K_PREVIOUS  &mmv MOVE_UP    &kp K_NEXT       &kp C_VOL_UP   &kp C_BRI_UP     &kp H    &kp J     &kp K   &kp L      &kp SEMI  &kp SQT
-&kp LCTRL    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp C_VOL_DN   &kp C_BRI_DN     &kp B    &kp N     &kp M   &kp COMMA  &kp DOT   &kp FSLH
-                                             &to 0            &mkp RCLK      &mkp LCLK        &kp RET  &kp BSPC  &trans
+&mt ESC TAB  &kp C_RW        &kp C_PP        &kp C_FF         &kp C_VOL_DN  &kp C_VOL_UP       &trans   &trans    &&trans   &&trans   &trans    &kp ESC
+&kp LSHFT    &kp K_PREVIOUS  &mmv MOVE_UP    &kp K_NEXT       &kp PG_UP     &kp HOME           &trans   &trans    &kp DEL   &kp UP    &trans    &trans
+&kp LCTRL    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PG_DN     &kp END            &trans   &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans
+                                             &to 0            &kp K_APP     &mkp LCLK          &kp RET  &kp BSPC  &to 0
             >;
         };
 
