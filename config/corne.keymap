@@ -9,8 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define default_layer 0
-#define lower_layer   1
-#define raise_layer   2
+#define left_1   1
+#define left_2   2
+#define raise_layer   3
+#define lower_layer   4
 
 / {
     behaviors {
@@ -30,10 +32,10 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-            // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
-            // | CTRL    |  Z  |  X  |  C  |  V   |  B  |   |  B  |  N   |  M  |  ,  |  .  |  /  |
-            //                       | LWR | LALT | SPC |   | ENT | BKSP | RSE |
+            // | TAB/ESC |  Q  |  W  |  E     |     R    |  T  |   |  Y  |  U   |  I  |  O  |  P  | ESC |
+            // | SHIFT   |  A  |  S  |  D     |     F    |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
+            // | CTRL    |  Z  |  X  |  C     |     V    |  B  |   |  B  |  N   |  M  |  ,  |  .  |  /  |
+            //                       | ht/1,2 | GUI/LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
 &mt ESC TAB  &kp Q  &kp W  &kp E             &kp R          &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
@@ -45,10 +47,10 @@
 
         left_1 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp Y    &kp U     &kp I   &kp O      &kp P     &kp ESC
-&trans  &trans  &trans  &trans  &trans  &trans    &kp H    &kp J     &kp K   &kp L      &kp SEMI  &kp SQT
-&trans  &trans  &trans  &trans  &trans  &trans    &kp B    &kp N     &kp M   &kp COMMA  &kp DOT   &kp FSLH
-                        &trans  &trans  &trans    &kp RET  &kp BSPC  &trans
+&trans  &trans          &trans          &trans           &trans     &trans       &kp Y    &kp U     &kp I   &kp O      &kp P     &kp ESC
+&trans  &trans          &mmv MOVE_UP    &trans           &trans     &trans       &kp H    &kp J     &kp K   &kp L      &kp SEMI  &kp SQT
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &trans       &kp B    &kp N     &kp M   &kp COMMA  &kp DOT   &kp FSLH
+                                        &to 0           &mkp RCLK  &mkp LCLK    &kp RET  &kp BSPC  &trans
             >;
         };
 
