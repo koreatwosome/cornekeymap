@@ -20,20 +20,17 @@
 
 / {
     behaviors {
-        ht_mvglayer: ht_mvglayer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_MVGLAYER";
-            bindings = <&to>, <&to>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
         td_alt_gui: td_alt_gui {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_GUI";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&kp LGUI>;
+        };
+        td_LeftLayer: td_LeftLayer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LEFTLAYER";
+            #binding-cells = <0>;
+            bindings = <&to 1>, <&to 2>;
         };
     };
 
@@ -48,10 +45,10 @@
             //                       | ht/1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&mt ESC TAB  &kp Q  &kp W  &kp E             &kp R        &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
-&kp LSHFT    &kp A  &kp S  &kp D             &kp F        &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
-&kp LCTRL    &kp Z  &kp X  &kp C             &kp V        &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
-                           &ht_mvglayer 2 1  &td_alt_gui  &kp SPACE    &kp RET  &kp BSPC  &to 3
+&mt ESC TAB  &kp Q  &kp W  &kp E          &kp R        &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
+&kp LSHFT    &kp A  &kp S  &kp D          &kp F        &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
+&kp LCTRL    &kp Z  &kp X  &kp C          &kp V        &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
+                           &td_LeftLayer  &td_alt_gui  &kp SPACE    &kp RET  &kp BSPC  &to 3
             >;
         };
 
