@@ -25,6 +25,12 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+        td_alt_gui: td_alt_gui {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_GUI";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&kp LGUI>;
+        };
     };
 
     keymap {
@@ -38,44 +44,14 @@
             //                       | ht/1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&mt ESC TAB  &kp Q  &kp W  &kp E             &kp R          &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
-&kp LSHFT    &kp A  &kp S  &kp D             &kp F          &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
-&kp LCTRL    &kp Z  &kp X  &kp C             &kp V          &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
-                           &ht_mvglayer 1 2  &kp LALT  &kp SPACE    &kp RET  &kp BSPC  &to 2
+&mt ESC TAB  &kp Q  &kp W  &kp E             &kp R        &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P     &kp ESC
+&kp LSHFT    &kp A  &kp S  &kp D             &kp F        &kp G        &kp H    &kp J     &kp K  &kp L      &kp SEMI  &kp SQT
+&kp LCTRL    &kp Z  &kp X  &kp C             &kp V        &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH
+                           &ht_mvglayer 1 2  &td_alt_gui  &kp SPACE    &kp RET  &kp BSPC  &to 3
             >;
         };
 
-        nav {
-            // -----------------------------------------------------------------------------------------
-            // | TAB/ESC |  C_RW    |  Pause/Play  |  C_FF    | VOP_DN   |  VOL_UP |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-            // | SHIFT   |  Prev    |  M_Up        |  Next    | PG_UP    |  HOME   |   |  H  |  J   | DEL |  UP |  ;  |  '  |
-            // | CTRL    |  M_Left  |  M_Down      |  M_Right | PG_DOWN  |  END    |   |  B  |  N   | LFT | DWN | RGT |  /  |
-            //                                     | to0      | Menu     |  LCLK   |   | ENT | BKSP | to0 |
-
-            bindings = <
-&mt ESC TAB  &kp C_RW        &kp C_PP        &kp C_FF         &kp C_VOL_DN  &kp C_VOL_UP       &trans   &trans    &trans    &trans    &trans    &kp ESC
-&kp LSHFT    &kp K_PREVIOUS  &mmv MOVE_UP    &kp K_NEXT       &kp PG_UP     &kp HOME           &trans   &trans    &kp DEL   &kp UP    &trans    &trans
-&kp LCTRL    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PG_DN     &kp END            &trans   &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans
-                                             &to 0            &kp K_APP     &mkp LCLK          &kp RET  &kp BSPC  &to 0
-            >;
-        };
-
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // | TAB/ESC |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | ESC  |
-            // | SHIFT   | F1  | F2  | F3  | F4   | F5  |   |  -  |  =   |  \  |  UP |  /  |  *   |
-            // | CTRL    | F6  | F7  | F8  | F9   | F10 |   |  [  |  ]   | LFT | DWN | RGT |  `   |
-            //                       | GUI | LALT | SPC |   | ENT | BKSP | def |
-
-            bindings = <
-&mt ESC TAB  &kp N1  &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0     &kp ESC
-&kp LSHFT    &kp F1  &kp F2  &kp F3    &kp F4    &kp F5       &kp MINUS  &kp EQUAL  &kp BSLH  &kp UP    &kp FSLH   &kp STAR
-&kp LCTRL    &kp F6  &kp F7  &kp F8    &kp F9    &kp F10      &kp LBKT   &kp RBKT   &kp LEFT  &kp DOWN  &kp RIGHT  &kp GRAVE
-                             &kp LGUI  &kp LALT  &kp SPACE    &kp RET    &kp BSPC   &to 0
-            >;
-        };
-
-        lower_layer {
+        left_key {
             // -----------------------------------------------------------------------------------------
             // | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   | C_FF     | C_RW     | PSCRN |  Play/Pause   | PAGE_UP    | ESC    |
             // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | C_MUTE |
@@ -83,10 +59,40 @@
             //                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
 
             bindings = <
-&mt ESC TAB  &kp Q  &kp W  &kp E  &kp R     &kp T        &kp C_FF      &kp C_RW      &kp PSCRN  &kp C_PP  &kp PG_UP  &kp ESC
-&kp LSHFT    &kp A  &kp S  &kp D  &kp F     &kp G        &kp C_BRI_UP  &kp C_VOL_UP  &kp DEL    &kp UP    &kp PG_DN  &kp C_MUTE
-&kp LCTRL    &kp Z  &kp X  &kp C  &kp V     &kp B        &kp C_BRI_DN  &kp C_VOL_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &kp RALT
-                           &to 0  &kp LALT  &kp SPACE    &kp RET       &kp BSPC      &kp LGUI
+&mt ESC TAB  &kp Q  &kp W  &kp E  &kp R        &kp T        &kp MINUS         &kp EQUAL          &kp BSLH  &kp PRINTSCREEN  &kp PG_UP  &kp ESC
+&kp LSHFT    &kp A  &kp S  &kp D  &kp F        &kp G        &kp LPAR          &kp RPAR           &kp DEL   &kp UP           &kp K_APP  &trans
+&kp LCTRL    &kp Z  &kp X  &kp C  &kp V        &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT  &kp DOWN         &kp RIGHT  &trans
+                           &to 0  &td_alt_gui  &kp SPACE    &kp RET           &kp BSPC           &to 0
+            >;
+        };
+
+        left_nav {
+            // -----------------------------------------------------------------------------------------
+            // | TAB/ESC |  C_RW    |  Pause/Play  |  C_FF    | VOP_DN   |  VOL_UP |   |  Y  |  U   |  I  |  O  |  P  | ESC |
+            // | SHIFT   |  Prev    |  M_Up        |  Next    | PG_UP    |  HOME   |   |  H  |  J   | DEL |  UP |  ;  |  '  |
+            // | CTRL    |  M_Left  |  M_Down      |  M_Right | PG_DOWN  |  END    |   |  B  |  N   | LFT | DWN | RGT |  /  |
+            //                                     | to0      | Menu     |  LCLK   |   | ENT | BKSP | to0 |
+
+            bindings = <
+&mt ESC TAB  &kp C_RW        &kp C_PP        &kp C_FF         &kp C_VOL_DN  &kp C_VOL_UP    &trans   &trans    &trans    &trans    &trans     &kp ESC
+&kp LSHFT    &kp K_PREVIOUS  &mmv MOVE_UP    &kp K_NEXT       &kp PG_UP     &kp HOME        &trans   &trans    &kp DEL   &kp UP    &trans     &trans
+&kp LCTRL    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PG_DN     &kp END         &trans   &trans    &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+                                             &to 0            &kp K_APP     &mkp LCLK       &kp RET  &kp BSPC  &to 0
+            >;
+        };
+
+        right_number {
+            // -----------------------------------------------------------------------------------------
+            // | TAB/ESC |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | ESC  |
+            // | SHIFT   | F1  | F2  | F3  | F4   | F5  |   |  -  |  =   |  \  |  UP |  /  |  *   |
+            // | CTRL    | F6  | F7  | F8  | F9   | F10 |   |  [  |  ]   | LFT | DWN | RGT |  `   |
+            //                       | GUI | LALT | SPC |   | ENT | BKSP | def |
+
+            bindings = <
+&mt ESC TAB  &kp F9  &kp F10  &kp F11  &kp F12      &trans       &kp STAR  &kp FSLH   &kp N7  &kp N8  &kp N9  &kp PLUS
+&kp LSHFT    &kp F5  &kp F6   &kp F7   &kp F8       &trans       &trans    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp MINUS
+&kp LCTRL    &kp F1  &kp F2   &kp F3   &kp F4       &trans       &trans    &kp N0     &kp N1  &kp N2  &kp N3  &kp RET
+                              &to 0    &td_alt_gui  &kp SPACE    &kp RET   &kp BSPC   &to 0
             >;
         };
     };
