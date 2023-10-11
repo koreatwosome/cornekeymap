@@ -48,7 +48,7 @@
         left_key {
             // -----------------------------------------------------------------------------------------
             // | TAB/ESC |  Q  |  W  |  E  |  R   |  T  |   | C_FF     | C_RW     | PSCRN |  Play/Pause   | PAGE_UP    | ESC    |
-            // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | C_MUTE |
+            // | SHIFT   |  A  |  S  |  D  |  F   |  G  |   | C_BRI_UP | C_VOL_UP |  DEL  |      UP       | PAGE_DOUWN | trans |
             // | CTRL    |  Z  |  X  |  C  |  V   |  B  |   | C_BRI_DN | C_VOL_DN |  LFT  |     DWN       |    RGT     | RALT   |
             //                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
 
