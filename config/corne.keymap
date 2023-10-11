@@ -39,7 +39,7 @@
 
             bindings = <
 &mt ESC TAB  &kp Q  &kp W  &kp E          &kp R        &kp T        &kp Y    &kp U     &kp I  &kp O      &kp P    &kp ESC
-&kp LSHFT    &kp A  &kp S  &kp D          &kp F        &kp G        &kp H    &kp J     &kp K  &kp L      &kp SQT  &kp SEMICOLON
+&kp LSHFT    &kp A  &kp S  &kp D          &kp F        &kp G        &kp H    &kp J     &kp K  &kp L      &kp SQT  &kp SEMI
 &kp LCTRL    &kp Z  &kp X  &kp C          &kp V        &kp B        &kp B    &kp N     &kp M  &kp COMMA  &kp DOT  &kp FSLH
                            &td_LeftLayer  &td_alt_gui  &kp SPACE    &kp RET  &kp BSPC  &to 3
             >;
