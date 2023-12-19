@@ -8,7 +8,7 @@
 #define left_nav   2
 #define right_number   3
 
-#define U_MOUSE_MOVE_MAX 1500                     /* <--- New max speed setting (default: 600) */
+#define U_MOUSE_MOVE_MAX 1200                     /* <--- New max speed setting (default: 600) */
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
@@ -19,7 +19,7 @@
 #define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
 
 &mmv {
-	time-to-max-speed-ms = <500>;             /* <--- How long time until max speed is reached (default: 500) */
+	time-to-max-speed-ms = <0>;             /* <--- How long time until max speed is reached (default: 500) */
 };
 
 #define U_MOUSE_SCROLL_MAX 20                    /* <--- New max speed setting (default: 10) */
@@ -34,6 +34,10 @@
 
 &mwh {
   time-to-max-speed-ms = <0>;                 /* <--- How long time until max speed is reached */
+};
+
+&mt {
+    tapping-term-ms = <500>;
 };
 
 
