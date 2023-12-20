@@ -7,39 +7,41 @@
 #define left_key   1
 #define left_nav   2
 #define right_number   3
-
 #define U_MOUSE_MOVE_MAX 1000                     /* <--- New max speed setting (default: 600) */
+
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
 #undef MOVE_RIGHT
+
 #define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
 #define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
 #define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
 #define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
 
 &mmv {
-	time-to-max-speed-ms = <500>;             /* <--- How long time until max speed is reached (default: 500) */
+    time-to-max-speed-ms = <500>;             /* <--- How long time until max speed is reached (default: 500) */
 };
 
 #define U_MOUSE_SCROLL_MAX 20                    /* <--- New max speed setting (default: 10) */
+
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
+
 #define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
 #define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
 &mwh {
-  time-to-max-speed-ms = <0>;                 /* <--- How long time until max speed is reached */
+    time-to-max-speed-ms = <0>;                 /* <--- How long time until max speed is reached */
 };
 
 &mt {
     tapping-term-ms = <500>;
 };
-
 
 / {
     behaviors {
@@ -57,14 +59,14 @@
             bindings = <&to 1>, <&to 2>;
         };
 
-	pht: positional_hold_tap {
+        ht: ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <800>;
+            label = "HT";
             bindings = <&kp>, <&kp>;
-        };
 
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+        };
     };
 
     combos {
@@ -88,10 +90,10 @@
             //                       | td1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&mt ESC TAB  &pht N1 Q &pht N2 W &pht N3 E       &pht N4 R    &pht N5 T    &pht N6 Y &pht N7 U &pht N8 I &pht N9 O  &pht N0 P &kp LANG1
-&kp LSHFT    &kp A     &kp S     &kp D           &kp F        &kp G        &kp H     &kp J     &kp K     &kp L      &kp SQT   &kp SEMI
-&kp LCTRL    &kp Z     &kp X     &kp C           &kp V        &kp B        &kp B     &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH
-                                 &td_LeftLayer   &td_alt_gui  &kp SPACE    &kp RET   &kp BSPC  &to 3
+&mt ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E       &ht N4 R     &ht N5 T     &ht N6 Y  &ht N7 U  &ht N8 I  &ht N9 O   &ht N0 P  &kp LANG1
+&kp LSHFT    &kp A     &kp S     &kp D          &kp F        &kp G        &kp H     &kp J     &kp K     &kp L      &kp SQT   &kp SEMI
+&kp LCTRL    &kp Z     &kp X     &kp C          &kp V        &kp B        &kp B     &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH
+                                 &td_LeftLayer  &td_alt_gui  &kp SPACE    &kp RET   &kp BSPC  &to 3
             >;
         };
 
@@ -118,10 +120,10 @@
             //                                     | to0      | Menu     |  LCLK   |   | ENT | BKSP | to0 |
 
             bindings = <
-&mt ESC TAB  &kp C_RW         &kp C_PP        &kp C_FF          &kp C_VOL_DN     &kp C_VOL_UP    &kp ASTERISK  &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp LSHFT    &mwh SCROLL_LEFT &mmv MOVE_UP    &mwh SCROLL_RIGHT &mwh SCROLL_UP   &trans          &kp K_NEXT    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp LCTRL    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_DOWN &mkp MCLK       &kp K_PREV    &kp N0     &kp N1  &kp N2  &kp N3  &kp RET
-                                              &to 0             &mkp RCLK        &mkp LCLK       &kp RET       &kp BSPC   &to 0
+&mt ESC TAB  &kp C_RW          &kp C_PP        &kp C_FF           &kp C_VOL_DN      &kp C_VOL_UP    &kp ASTERISK  &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp LSHFT    &mwh SCROLL_LEFT  &mmv MOVE_UP    &mwh SCROLL_RIGHT  &mwh SCROLL_UP    &trans          &kp K_NEXT    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp LCTRL    &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mwh SCROLL_DOWN  &mkp MCLK       &kp K_PREV    &kp N0     &kp N1  &kp N2  &kp N3  &kp RET
+                                               &to 0              &mkp RCLK         &mkp LCLK       &kp RET       &kp BSPC   &to 0
             >;
         };
 
@@ -136,7 +138,7 @@
 &mt ESC TAB  &kp F9  &kp F10  &kp F11  &kp F12      &trans       &kp ASTERISK  &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS
 &kp LSHFT    &kp F5  &kp F6   &kp F7   &kp F8       &trans       &kp K_NEXT    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PLUS
 &kp LCTRL    &kp F1  &kp F2   &kp F3   &kp F4       &trans       &kp K_PREV    &kp N0     &kp N1  &kp N2  &kp N3  &kp RET
-                              &to 0    &td_alt_gui  &kp SPACE    &kp RET   &kp BSPC   &to 0
+                              &to 0    &td_alt_gui  &kp SPACE    &kp RET       &kp BSPC   &to 0
             >;
         };
     };
