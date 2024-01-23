@@ -89,10 +89,10 @@
             //                       | td1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E       &ht N4 R     &ht N5 T     &ht N6 Y  &ht N7 U          &ht N8 I   &ht N9 O    &ht N0 P   &kp BACKSPACE
-&kp LSHFT    &kp A     &kp S     &kp D          &kp F        &kp G        &kp H     &kp J             &kp K      &kp L       &kp SEMI   &kp SINGLE_QUOTE
-&kp LCTRL    &kp Z     &kp X     &kp C          &kp V        &kp B        &kp N     &kp M             &kp COMMA  &kp PERIOD  &kp SLASH  &kp EXCL
-                                 &td_LeftLayer  &td_alt_gui  &kp SPACE    &kp RET   &kp LANG_HANGEUL  &to 3
+&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E       &ht N4 R     &ht N5 T     &ht N6 Y  &ht N7 U    &ht N8 I   &ht N9 O    &ht N0 P   &kp LANGUAGE_1
+&kp LSHFT    &kp A     &kp S     &kp D          &kp F        &kp G        &kp H     &kp J       &kp K      &kp L       &kp SEMI   &kp SINGLE_QUOTE
+&kp LCTRL    &kp Z     &kp X     &kp C          &kp V        &kp B        &kp N     &kp M       &kp COMMA  &kp PERIOD  &kp SLASH  &kp EXCL
+                                 &td_LeftLayer  &td_alt_gui  &kp SPACE    &kp RET   &kp K_BACK  &to 3
             >;
         };
 
