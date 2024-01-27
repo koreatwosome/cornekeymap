@@ -104,10 +104,10 @@
             //                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
 
             bindings = <
-&mt ESC TAB  &kp Q  &kp W  &kp E  &kp R        &kp T        &kp LPAR  &kp RPAR  &kp BSLH  &kp PRINTSCREEN  &kp PG_UP  &kp ESC
-&kp LSHFT    &kp A  &kp S  &kp D  &kp F        &kp G        &kp LBKT  &kp RBKT  &kp DEL   &kp UP           &kp K_APP  &trans
-&kp LCTRL    &kp Z  &kp X  &kp C  &kp V        &kp B        &kp LBRC  &kp RBRC  &kp LEFT  &kp DOWN         &kp RIGHT  &kp LANGUAGE_1
-                           &to 0  &td_alt_gui  &kp SPACE    &kp RET   &kp BSPC  &to 0
+&mt ESC TAB  &kp Q  &kp W  &kp E  &kp R        &kp T      &kp LPAR   &kp RPAR  &kp BSLH  &kp PRINTSCREEN  &kp PG_UP      &kp BSPC
+&kp LSHFT    &kp A  &kp S  &kp D  &kp F        &kp G      &kp LBKT   &kp RBKT  &kp DEL   &kp UP           &kp PAGE_DOWN  &trans
+&kp LCTRL    &kp Z  &kp X  &kp C  &kp V        &kp B      &kp LBRC   &kp RBRC  &kp LEFT  &kp DOWN         &kp RIGHT      &kp LANGUAGE_1
+                           &to 0  &td_alt_gui  &kp RET    &kp SPACE  &kp BSPC  &to 0
             >;
         };
 
