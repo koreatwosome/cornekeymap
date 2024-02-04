@@ -89,10 +89,10 @@
             //                       | td1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E   &ht N4 R     &ht N5 T     &ht N6 Y   &ht N7 U       &ht N8 I        &ht N9 O    &ht N0 P   &kp BSPC
-&kp TAB      &kp A     &kp S     &kp D      &kp F        &kp G        &kp H      &kp J          &kp K           &kp L       &kp SEMI   &kp SINGLE_QUOTE
-&kp LSHFT    &kp Z     &kp X     &kp C      &kp V        &kp B        &kp N      &kp M          &kp COMMA       &kp PERIOD  &kp SLASH  &ht QUESTION RET
-                                 &kp LCTRL  &td_alt_gui  &kp SPACE    &kp SPACE  &td_LeftLayer  &kp LANGUAGE_1
+&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E   &ht N4 R     &ht N5 T     &ht N6 Y   &ht N7 U        &ht N8 I       &ht N9 O    &ht N0 P   &kp BSPC
+&kp TAB      &kp A     &kp S     &kp D      &kp F        &kp G        &kp H      &kp J           &kp K          &kp L       &kp SEMI   &kp SINGLE_QUOTE
+&kp LSHFT    &kp Z     &kp X     &kp C      &kp V        &kp B        &kp N      &kp M           &kp COMMA      &kp PERIOD  &kp SLASH  &ht QUESTION RET
+                                 &kp LCTRL  &td_alt_gui  &kp SPACE    &kp SPACE  &kp LANGUAGE_1  &td_LeftLayer
             >;
         };
 
@@ -104,10 +104,10 @@
             //                       | def | LALT | SPC |   | ENT      |   BKSP   |  GUI  |
 
             bindings = <
-&mt ESC TAB  &kp F1   &kp F2    &kp F3       &kp F4         &kp F5       &kp LPAR   &kp RPAR        &kp K_CUT   &kp PRINTSCREEN  &kp K_UNDO   &kp BSPC
-&kp LSHFT    &kp F6   &kp F7    &kp F8       &kp F9         &kp F10      &kp LBKT   &kp RBKT        &kp K_COPY  &kp UP           &kp K_PASTE  &kp DEL
-&kp LCTRL    &kp DEL  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END      &kp LBRC   &kp RBRC        &kp LEFT    &kp DOWN         &kp RIGHT    &kp RET
-                                &to 0        &td_alt_gui    &kp SPACE    &kp SPACE  &kp LANGUAGE_2  &to 2
+&mt ESC TAB  &kp F1          &kp F2    &kp F3       &kp F4         &kp F5       &kp LPAR   &kp RPAR        &kp K_CUT   &kp PRINTSCREEN  &kp K_UNDO   &kp BSPC
+&kp LSHFT    &kp F6          &kp F7    &kp F8       &kp F9         &kp F10      &kp LBKT   &kp RBKT        &kp K_COPY  &kp UP           &kp K_PASTE  &kp DEL
+&kp LCTRL    &kp UNDERSCORE  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END      &kp LBRC   &kp RBRC        &kp LEFT    &kp DOWN         &kp RIGHT    &kp RET
+                                       &to 0        &td_alt_gui    &kp SPACE    &kp SPACE  &kp LANGUAGE_2  &to 2
             >;
         };
 
