@@ -89,9 +89,9 @@
             //                       | td1,2 |     LALT | SPC |   | ENT | BKSP | RSE |
 
             bindings = <
-&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E   &ht N4 R     &ht N5 T     &ht N6 Y   &ht N7 U        &ht N8 I       &ht N9 O    &ht N0 P               &kp BSPC
-&kp TAB      &kp A     &kp S     &kp D      &kp F        &kp G        &kp H      &kp J           &kp K          &kp L       &kp SEMI               &ht DOUBLE_QUOTES SINGLE_QUOTE
-&kp LSHFT    &kp Z     &kp X     &kp C      &kp V        &kp B        &kp N      &kp M           &kp COMMA      &kp PERIOD  &ht EXCLAMATION SLASH  &ht QUESTION RET
+&ht ESC TAB  &ht N1 Q  &ht N2 W  &ht N3 E   &ht N4 R     &ht N5 T     &ht N6 Y   &ht N7 U        &ht N8 I       &ht N9 O    &ht N0 P            &kp BSPC
+&kp TAB      &kp A     &kp S     &kp D      &kp F        &kp G        &kp H      &kp J           &kp K          &kp L       &kp SEMI            &ht DOUBLE_QUOTES SINGLE_QUOTE
+&kp LSHFT    &kp Z     &kp X     &kp C      &kp V        &kp B        &kp N      &kp M           &kp COMMA      &kp PERIOD  &ht QUESTION SLASH  &ht EXCLAMATION RET
                                  &kp LCTRL  &td_alt_gui  &kp SPACE    &kp SPACE  &kp LANGUAGE_1  &td_LeftLayer
             >;
         };
